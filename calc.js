@@ -3,7 +3,7 @@ var counterAddInputFieldsForAdd=0 ,counterDisplayYourActivity = 0;
 var counterAddInputFieldsSearchProduct = 0;
 var counter =-1;
 var changePage = 0;
-var contorMainBtn = 6;                 // 0 --vegetable    // 1 -- fruit  // 2 -- alchDrings //3-Juice //4-Backery //5-Food
+var contorMainBtn = 6;                 // 0 --Vegetable    // 1 -- Fruit  // 2 -- alchDrings  //3-Juice    //4-Backery    //5-Food
 var ifRunCalculatorReceipt = 0;
 var runBtnSecond = 1;
 var btnNext=0;
@@ -25,7 +25,7 @@ var product={
 }
 
 
-//////////////////////////////////////////////////////////////        Show Pages        ////////////////////////////////////////////
+//////////////////////////////////////////////////////////////        Show Pages        ///////////////////////////////////////////////
 
 //Show on display of the Sales place , after click Sales word
 function sales(){  
@@ -122,7 +122,7 @@ if (changePage === 0){
      makeTable();
 }
 
-///////////////////////////////////////////////////////         Page Sales          ////////////////////////////////////////////
+///////////////////////////////////////////////////////         Page Sales          ///////////////////////////////////////////////////////
 
 //Add all Second Button and assign them with element of array product.name
 function typeBtnSecond(){
@@ -450,7 +450,7 @@ document.querySelector('header').insertAdjacentHTML('afterbegin',html);
   document.querySelector('.shopping').insertAdjacentHTML('beforeend',html);
 }
 
-////////////////////////////////////////////////// Storage ///////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////// Storage //////////////////////////////////////////////////////////////////////
 
 //Make table 
 function makeTable(){ 
