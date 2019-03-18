@@ -1,0 +1,461 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background: rgb(54, 54, 54);
+}
+
+header {
+    position:relative;
+    margin-top: 2%;
+    margin-left:5%;
+    width: 90%;
+    height:30px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    background-color:lightgray;
+    text-align: right;   
+    }
+
+#textSales{
+    position:absolute;
+    top:10%;
+    right:11%;
+    margin-right: 3%;
+    color:black;
+}
+#textSales:hover{
+    cursor: pointer;
+    color:rgb(54,54,54);
+    font-weight: bold;
+}
+
+#textStorage{
+    position:absolute;
+    top:10%;
+    right:2%;
+    margin-right: 3%;
+    color:gray;
+}
+ #textStorage:hover{
+    cursor: pointer;
+    color:rgb(54, 54, 54);
+    font-weight: bold;
+}
+
+.resizeTextH3{
+    font-size:97%;
+}
+
+header>h4{
+    position: absolute;
+    top:20%;
+    left:6%;
+    color: rgb(105, 105, 105);
+}
+
+header>img{
+  position:absolute;
+  left:2%;
+}
+
+.main{
+    width:85%;
+    height:85%;
+    margin-left:7.5%;
+    position:absolute;
+    top:12%;
+    border: 2px solid grey;
+    border-radius:5px;
+    background-color:lightgray;
+}
+
+.mainButtons{
+    width:10%;
+    height:68%;
+    margin:5px;
+    position:absolute;
+    top:15%;
+    left:3%;
+    border: 2px solid gray;
+    background-color: rgb(158, 157, 157);
+}
+
+.mainButtons>input{
+    margin:5px;
+    width:90%;
+    height:14%;
+    background-color: lightslategray;
+    font-size:90%;
+}
+
+.secondButtons{
+    border:2px solid gray;
+    border-radius:5px;
+    margin:5px;
+    position:absolute;
+    top:14%;
+    left:18%;
+    width:542px;
+    height:120px;
+    background-color: rgb(158, 157, 157)
+}
+
+.secondButtons>input{
+    margin-left:7px;
+    margin-right:5px;
+    margin-top:7px;
+    width:95px;
+    height:50px;
+    font-size: 95%;
+    background: rgba(201, 1, 1, 0.486);
+    border-radius: 20%;
+    align-content: center;
+}
+
+input:hover{
+    cursor: pointer;
+}
+
+.displayScreen{
+    position:absolute;
+    top:1%;
+    left:1%;
+    border:2px solid gray;
+    border-radius: 3%;
+    width:50%;
+    height:28%;
+    background-color: rgba(14, 87, 14, 0.938);
+}
+
+.hour{
+    margin-left:2%;
+}
+
+.date{
+    position:absolute;
+    top:1%;
+    right:5%;
+}
+
+.shopping{
+    position:absolute;
+    top: 35%;
+    left: 2%;
+    width: 100%;
+    text-align:center;
+    font-size:100%;
+}
+
+.calc{
+position:absolute;
+top:18%;
+right:5%;
+width:25%;
+height:54%;
+border: 6px solid gray;
+background-color:rgb(97, 97, 97);
+border-radius:3%;
+}
+
+.calc >input{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius: 10%;
+    color:gray;
+    background-color:rgba(11, 14, 37, 0.89);
+    font-size:140%;
+}
+
+#btnx{
+ position: absolute;
+ top:33%;
+ left:3%;
+ }
+ #btnC{
+     position:absolute;
+     top:33%;
+     left: 20%;
+ }
+#btn1{
+    position: absolute;
+    top:33%;
+    left:37%;
+     }
+#btn2{
+    position: absolute;
+    top: 50%;
+    left: 3%;
+}
+#btn3{
+    position: absolute;
+    top: 50%;
+    left: 20%;
+}
+#btn4{
+    position: absolute;
+    top: 50%;
+    left: 37%;
+}
+#btn5{
+    position: absolute;
+    top: 67%;
+    left: 3%;
+}
+#btn6{
+    position: absolute;
+    top: 67%;
+    left: 20%;
+}
+#btn7{
+    position: absolute;
+    top: 67%;
+    left: 37%;
+}
+#btn8{
+    position: absolute;
+    top: 84%;
+    left: 3%;
+}
+#btn9{
+    position: absolute;
+    top: 84%;
+    left: 20%;
+}
+#btn0{
+    position: absolute;
+    top: 84%;
+    left: 37%;
+}
+#btnReceipt{
+    position:absolute;
+    top:84%;
+    right:10%;
+    width:80px;
+}
+#btnNext{
+    position:absolute;
+    top: 67%;
+    right:10%;
+    width:80px;
+    font-size:80%;
+}
+
+.btnTakeReceipt{
+  width:34%;
+  height:10%;
+  border: none;
+  position:absolute;
+  top: 1%;
+  right: 8%;
+  font-weight: bolder;
+  color: rgba(180, 179, 179, 0.562);
+}
+.btnTakeReceipt:hover{
+    cursor:pointer;
+    color: rgb(128, 128, 128); 
+}
+
+.outputReceipts{
+    position:absolute;
+    top:10%;
+    right: 4%;
+    width:37%;
+    height:1%;
+    border:5px solid rgb(26, 25, 25);
+    border-radius:20%;
+    background: rgb(54, 54, 54);
+}
+
+.receipts{
+    padding-top:2px;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    position:absolute;
+    top:11.5%;
+    right:5.5%;
+    width:37%;
+    text-align: justify;
+    height: 10px;
+    background: whitesmoke;
+    border:1px solid black;
+}
+
+.receipts{
+margin-top:1px;
+}
+
+.rowTable{
+    border:2px solid rgb(128, 128, 128);
+    border-top: 0px;
+    width:70%;
+    height:4%;
+    background-color:rgb(2, 105, 2);
+    text-align:center;
+    }
+
+.rowTable1{
+    border:2px solid rgb(128, 128, 128);
+    border-top: 0px;
+    width:70%;
+    height:4%;
+    background-color:rgb(18, 71, 8);
+    color :rgba(173, 173, 173, 0.932);
+    text-align:center;
+}
+.RT{
+    display: inline-block;
+}
+
+.displayRT{
+    width:24.75%;
+    border-right: 2px solid rgb(128,128,128);
+   }
+
+
+.form{
+    background-color:gray;
+    width: 30%;
+    height: 100%;
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+.form > h4 {
+    margin-left:10px;
+}
+
+#action{
+    margin-top:5px;
+    margin-left:10px;
+}
+
+#ok{
+    margin:10px;
+    width:30px;
+    height:25px;
+    border-radius:20%;
+    background-color: rgba(33, 33, 100, 0.445);
+}
+
+.add{
+    width:100%;
+    height:30%;
+    position:absolute;
+    top:12%;
+    left:1%;
+} 
+
+.input{
+    width:95%;
+    background-color: rgba(245, 245, 245, 0.644);
+    font-size:80%;
+    color: black;
+   }
+
+.in{
+    width:22%;
+    height:12%;
+    border: 2px solid rgb(63, 63, 63);
+}
+
+#prodInput{
+    position:absolute;
+    top:0;
+    left:0;
+}
+#typeInput{
+    position:absolute;
+    top:0;
+    left:22%;
+}
+#priceInput{
+   position: absolute;
+   top:0;
+   left:44%;
+}
+#stocInput{
+    position: absolute;
+    top:0;
+    left:66%;
+}
+
+.btnAdd{
+    width:30px;
+    height: 25px;
+    position:absolute;
+    top:0;
+    right:2%;
+    border:none;
+    border-radius:20%;
+    background-color: rgba(33, 33, 100, 0.822);
+    color: gray;
+}
+
+.btnAdd:hover{
+    background-color: rgb(33, 33, 100);
+    color: rgb(83, 83, 83);
+}
+
+.enterSearchData{
+    position:absolute;
+    top:12%;
+    left:5%;
+    width:48%;
+    background-color: rgba(245, 245, 245, 0.644);
+    font-size:85%;
+    color: black;
+}
+
+.searchProduct{
+    position:absolute;
+    top:12%;
+    left: 60%;
+    width:60px;
+    height:23px;
+    border-radius:20%;
+    background-color: rgba(33, 33, 100, 0.822);
+    color: gray;
+}
+
+.screenTable{
+    width: 98%;
+    height:74%;
+    position:absolute;
+    top:24.5%;
+    left:0;
+    background-color: rgb(54, 54, 54);
+    border:solid 5px rgb(94, 94, 94);
+    border-radius: 5px;
+}
+
+.hourSt{
+ font-weight: bolder;
+}
+
+.dateSt{
+    font-weight:bolder;
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+.border{
+  border:5px solid;
+  border-color:rgb(54, 54, 54);
+  border-radius:9px;
+  
+}
+
+.informationAddType{
+    position:absolute;
+    top: 16.5%;
+    right: 3%;
+  color: rgba(245, 245, 245, 0.671);
+  font-size: 70%;
+  text-align: justify;
+}
