@@ -438,11 +438,12 @@ html='<h4>Number receipt :'+numberReceipt+' </h4>';
 document.querySelector('header').insertAdjacentHTML('afterbegin',html);
 
   salesData.push(receipt);
-
+  clickBtnReceipt = 0;
   receipt=[];
   numberReceipt++;
   counter =-1;
   runBtnSecond=1; 
+  btnNext =1;
  
   sales();
 
