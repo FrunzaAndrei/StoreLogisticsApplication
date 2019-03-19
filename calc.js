@@ -16,6 +16,8 @@ var moreOk = 0;
 var indexFormatNumber = 0; //function formatNumber
 var salesData = [];
 var receipt = []; 
+var historyReceipts=[]; // Store all receipts
+var totalCashColected =0;
 var valueReceipt= 0 ;
 var product={                                                                                                    
     name:["Tomatoes-0","Cucumbers-0","Carrot-0", "Garlic-0", "Onion-0","Eggplants-0","Olive-0","Apples-1","Oranges-1","Bananas-1","Kiwi-1","Vodka-2","Wiskey-2","Beer-2","CocaCola-3","Fanta-3","Sprite-3","Lipton-3","Prigat-3","Bread-4","Buns-4","Croissants-4","Biscuits-4","Bagels-4","Ciabatta-4","Salami-5","Yoghurt-5","Cheese-5","Fish-5","Milk-5"],         
@@ -120,6 +122,9 @@ if (changePage === 0){
       
      changePage=1;
      makeTable();
+     if (salesData.length > 0) {
+      updateSaleDataToStorage();
+     }
 }
 
 ///////////////////////////////////////////////////////         Page Sales          ///////////////////////////////////////////////////////
@@ -663,4 +668,27 @@ if  (indexSearch === -1){
       displayYourActivity(message);
   }
 } 
+}
+
+//Sync function - Sales <-> Storage
+function updateSaleDataToStorage(){
+ var leng = salesData.length;
+ var leeng = product.name.length;
+ 
+ for (var i=0;i<leng;i++){   // to scroll through the elements
+     var lengt= salesData[i].length;
+      historyReceipts.push(salesData[i]); 
+    for (var j=0;j<lengt;j++){              // for each item
+      if (j < lengt-1){
+      for (var y=0; y<leeng;y++){
+        if (salesData[i][j][0] === product.name[y]){
+           product.stoc[y] = product.stoc[y]-salesData[i][j][3];
+        }
+      }
+    }else {totalCashColected += salesData[i][j]}
+   }
+ }
+ salesData = [];
+ receipt=[];
+ updateTable();
 }
