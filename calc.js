@@ -12,7 +12,7 @@ var stepBack=0;
 var number=0;
 var valueResizeReceipt =0;
 var numberReceipt =1;
-var clickBtnReceipt,counterRowReceipt;
+var clickBtnReceipt=0,counterRowReceipt;
 var moreOk = 0;
 var indexFormatNumber = 0; //function formatNumber
 var salesData = [];
@@ -352,7 +352,7 @@ function stepsBack(){
 // After click Button Receipt
 function makeReceipt(){
     
-    clickBtnReceipt =0;
+   
     valueResizeReceipt=10;
     var value,valueR,value2,value3,html;;
     var index = receipt.length;
@@ -379,7 +379,7 @@ function makeReceipt(){
     showDisplayData();
         }
 
-    clickBtnReceipt=1; //(after one click and this let only one click)
+    clickBtnReceipt = 1; //(after one click and this let only one click)
     for(var i=-2;i<index;i++){
         if (i<0){
           if (i<-1){
