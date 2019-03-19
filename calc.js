@@ -234,12 +234,10 @@ function chooseProduct(prod){
   var receiptElem=[]; 
   var lenght =prod.length;
   var index = prod.substr(lenght-1,lenght);
-  console.log("runBtnSecond= " +runBtnSecond);
 
 
   if ((contorMainBtn == index)&&(runBtnSecond===1)) { 
-    console.log("contorMainBtn= "+contorMainBtn);
-    resetColorSecondButtons();
+       resetColorSecondButtons();
     document.querySelector(".secondButtons").classList.remove('border');
     document.querySelector(".calc").classList.add('border');
     
@@ -259,8 +257,7 @@ function chooseProduct(prod){
     receiptElem.push(1);
     receipt.push(receiptElem);
     counter++;
-    console.log(receipt)
-    
+       
     document.querySelector('#elemDisplay').remove();
      var html = '<p id="elemDisplay">' + nameElement +' x  1</p>';
    document.querySelector('.shopping').insertAdjacentHTML('afterbegin',html);
@@ -318,15 +315,12 @@ function next(){
  moreOk=0;
  value= Math.round(( receipt[counter][2]*receipt[counter][3])*100)/100;
  valueReceipt = valueReceipt + value ;
-   console.log (valueReceipt);
  
  document.querySelector(".mainButtons").classList.add('border');
  document.querySelector(".calc").classList.remove('border');
  
  showDisplayData();
-  
- console.log(receipt);
- console.log(valueReceipt);
+
  btnNext=0;
  }
 }
@@ -403,7 +397,6 @@ function makeReceipt(){
           value=Math.round((receipt[i][2]*receipt[i][3])*100)/100;
           value2=receipt[i][1];
           value3=receipt[i][3];
-          console.log(valueResizeReceipt);
           document.querySelector('.receipts').style.height = valueResizeReceipt + "px";
           html='<h6>'+value2+' x '+value3+' -- '+value+' $</h6>';
           document.querySelector('.receipts').insertAdjacentHTML('afterbegin',html);
@@ -494,8 +487,7 @@ function makeTable(){
 function updateTable(){
   //Delete Table
   var elements = document.querySelectorAll(".rowTable1");
-  console.log(elements);
-  var leng = elements.length;
+   var leng = elements.length;
  for (var i=0;i<leng;i++){
    elements[i].remove();
  }
@@ -646,7 +638,7 @@ function searchProduct(){
   var indexSearch = product.name.findIndex(function(item){
         var leng = item.length;
         return  search ===item.substr(0,leng-2)});
-        console.log(indexSearch);
+       
   var l=product.name.length;
   var found = 0,leng,name;
 
