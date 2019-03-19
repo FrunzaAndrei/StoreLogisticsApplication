@@ -1,6 +1,7 @@
 /////////////////////////////////////////////////////           Memory             /////////////////////////////////////////////////
 var counterAddInputFieldsForAdd=0 ,counterDisplayYourActivity = 0;
-var counterAddInputFieldsSearchProduct = 0;
+var counterAddInputFieldsSearchProduct = 0;  
+var indexElement;
 var counter =-1;
 var changePage = 0;
 var contorMainBtn = 6;                 // 0 --Vegetable    // 1 -- Fruit  // 2 -- alchDrings  //3-Juice    //4-Backery    //5-Food
@@ -152,7 +153,8 @@ function typeBtnSecond(){
     document.querySelector('.secondButtons').style.height = 57+"px";
   } 
 
-   for(i=0;i<l;i++){
+   for(i=0;i<l;i++){ 
+     if (product.stoc[i] > 1){  
   length = product.name[i].length;
   ind = product.name[i].substr(length-1,length);
   name = product.name[i].substr(0,length-2);
@@ -165,7 +167,8 @@ function typeBtnSecond(){
 
   document.querySelector('.secondButtons').insertAdjacentHTML("beforeend",newHtml);
   document.getElementById(name).setAttribute('onclick',"chooseProduct('"+product.name[i]+"')");
-  }
+        } 
+ }
 }
 
 typeBtnSecond();
@@ -233,7 +236,7 @@ if (changePage === 0){
 
 //After Click on second buttons
 function chooseProduct(prod){
-  var indexElem;
+  
   var receiptElem=[]; 
   var lenght =prod.length;
   var index = prod.substr(lenght-1,lenght);
@@ -252,8 +255,8 @@ function chooseProduct(prod){
   
   var nameElement = prod.substr(0,lenght-2);
   
-  indexElem = product.name.findIndex(function(el){ return el == prod  });
-    priceElem = product.price[indexElem];
+  indexElement = product.name.findIndex(function(el){ return el == prod  });
+    priceElem = product.price[indexElement];
        
     receiptElem.push(nameElement);
     receiptElem.push(priceElem);
@@ -289,12 +292,13 @@ function formatNumber(nr){
     if (indexFormatNumber<=2){
       number = number*10 + nr;
       } 
-   
-  
+    if (number < product.stoc[indexElement]){  
    document.querySelector('#elemDisplay').remove();
    var html = '<p id="elemDisplay">' + receipt[counter][1] +' x '+ number + '</p>';
    document.querySelector('.shopping').insertAdjacentHTML('afterbegin',html);
-   
+   }else {
+     number = product.stoc[indexElement];
+   }
    receipt[counter][3]= number;
     } 
   };
