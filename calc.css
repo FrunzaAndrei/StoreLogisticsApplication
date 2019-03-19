@@ -433,8 +433,13 @@ margin-top:1px;
     border-radius: 5px;
 }
 
+.screenTable > h4 {
+    color: rgba(255, 255, 255, 0.801);
+}
+
 .hourSt{
  font-weight: bolder;
+ color:  rgba(255, 255, 255, 0.801);
 }
 
 .dateSt{
@@ -442,6 +447,7 @@ margin-top:1px;
     position:absolute;
     top:0;
     right:0;
+    color:  rgba(255, 255, 255, 0.801);
 }
 
 .border{
