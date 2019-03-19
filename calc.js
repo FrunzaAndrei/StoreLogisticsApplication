@@ -124,6 +124,9 @@ if (changePage === 0){
      makeTable();
      if (salesData.length > 0) {
       updateSaleDataToStorage();
+      displayYourActivity('You gave '+ (numberReceipt-1) + ' receipts.');
+      var valueTotal = Math.round(totalCashColected*100)/100;
+      displayYourActivity('You sold '+ valueTotal + ' $.');
      }
 }
 
