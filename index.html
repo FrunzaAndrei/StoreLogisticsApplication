@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Magazine</title>
+        <link rel="stylesheet" href="calc.css"/>
+    </head>
+    <body>
+        <header>
+              <img id="imgHeader" src="png/calculator.png" width="25px" height="25px"/>
+            <!-- <img id="imgHeader" src="png/warehouse.png" width="25px" height="25px"/>-->
+              <h3 id="textSales" onclick="sales()">Sales </h3>
+              <h3 id="textStorage" onclick="storage()">Storage </h3>
+              <h4>Number receipt : 0 </h4> 
+        </header>
+        <div class="main">
+         <div class="sales">
+            <div class="mainButtons">
+              <input type="submit" value="Vegetables" id="vegetable" onclick="showButtons(0)"/>
+                <input type="submit" value="Fruits" id="fruits" onclick="showButtons(1)"/>
+                <input type="submit" value="Juice" id="juice"onclick="showButtons(3)"/>
+                <input type="submit" value="Alch.Drings" id="alchDrinks" onclick="showButtons(2)" />
+                <input type="submit" value="Backery" id="backery" onclick="showButtons(4)" />
+                <input type="submit" value="Food" id="food" onclick="showButtons(5)"/> 
+            </div>
+            <div class="secondButtons">
+            <!-- <input type="submit" id="Rosii-0" value="Rosii" onclick="chooseProduct("rosii")"/>
+                <input type="submit" id="Castraveti-0" value="Castraveti"/>
+                <input type="submit" id="Morcovi-0" value="Morcovi"/>
+                <input type="submit" id="Vinete-0" value="Vinete"/>
+                <input type="submit" id="Masline-0" value="Masline"/>
+                <input type="submit" id="Ceapa-0" value="Ceapa"/>
+                <input type="submit" id="fruit-1" value="Mere" />
+                <input type="submit" id="fruit-2" value="Pere"/>
+                <input type="submit" id="fruit-3" value="Kiwi"/>
+                <input type="submit" id="fruit-4" value="Banane"/>
+                <input type="submit" id="fruit-5" value="Portocale"/>
+                <input type="submit" id="alchDrinks-1" value="Jack Daniel's" />
+                <input type="submit" id="alchDrinks-2" value="Votka"/>
+                <input type="submit" id="alchDrinks-3" value="Ciuc"/>
+                <input type="submit" id="alchDrinks-4" value="Heinekien"/>
+                <input type="submit" id="alchDrinks-5" value="Bucegi"/>
+                <input type="submit" id="alchDrinks-6" value="Argus" />
+                <input type="submit" id="backery-1" value="Paine"/>
+                <input type="submit" id="backery-2" value="Paine |||"/>
+                <input type="submit" id="backery-3" value="Batoane"/>
+                <input type="submit" id="backery-4" value="Chifle"/>
+                <input type="submit" id="alchDrings-7" value="Timisoara"/>
+                <input type="submit" id="alchDrings-8" value="Argus" />
+                <input type="submit" id="backery-5" value="Paine"/>
+                <input type="submit" id="juice-1" value="CocaCola"/>
+                <input type="submit" id="juice-2" value="Pepsi"/>
+                <input type="submit" id="juice-3" value="Fanta"/>
+                <input type="submit" id="juice-4" value="Sprite"/>
+                <input type="submit" id="juice-5" value="Lipton"/>
+                <input type="submit" id="juice-6" value="Prigat"/>--->
+            </div>
+            
+             <div class="calc">
+                <div class="displayScreen">
+                    <div class="screen">
+                    <div class="hour"><p><span id="h">15</span>:<span id="m">15</span>:<span id="s">15</span></p></div>  
+                    <div class="date"><p><span id="d">10</span>/<span id="mm">08</span>/<span id="y">2019</span></p></div>
+                    <br/>
+                    <div class="shopping"><p id="elemDisplay">Bread x 3</p> <br/>
+                                   <p id="elem2Display"> Total Value = 0 $ </p>   
+                    </div>
+                     
+               </div>
+            </div>
+                
+      <!---<div class="btnTakeReceipt" value ="Take Receipt" onclick="takeReceipt()">Take Receipt</div>--->
+              
+                 <input type="submit" value = "x" id="btnx" onclick="more()" />
+                 <input type="submit" value = "c"  id="btnC" onclick="stepsBack()"/>
+                 <input type="submit" value ="next product" id="btnNext" onclick="next()"/> 
+                 <input type="submit" value = "1" id="btn1" onclick="formatNumber(1)"/>
+                 <input type="submit" value = "2" id="btn2" onclick="formatNumber(2)"/>
+                 <input type="submit" value = "3" id="btn3" onclick="formatNumber(3)"/>
+                 <input type="submit" value = "4" id="btn4" onclick="formatNumber(4)"/>
+                 <input type="submit" value = "5" id="btn5" onclick="formatNumber(5)" />
+                 <input type="submit" value = "6" id="btn6" onclick="formatNumber(6)"/>
+                 <input type="submit" value = "7" id="btn7" onclick="formatNumber(7)"/>
+                 <input type="submit" value = "8" id="btn8" onclick="formatNumber(8)"/>
+                 <input type="submit" value = "9" id="btn9" onclick="formatNumber(9)"/>
+                 <input type="submit" value = "0" id="btn0" onclick="formatNumber(0)"/>
+                 <input type="submit" value = "receipt" id="btnReceipt" onclick="makeReceipt()"/>
+                 
+                     
+                 <div class="outputReceipts">   </div>
+                 <div class="receipts">
+                   <!--<h6>12:12 -- 12/04/2019</h6> 
+                       <h6>Bread x 3 -- 20$</h6>
+                    <h6>----------------------</h6>
+                     <h6>+ Number bon ---  1 +</h6>  --->
+                    </div>
+                </div>
+          </div>
+
+      <!------------------------------------------------------------------------------------------------------------------------------------->     
+  <!--     
+      <div class="storage">
+          
+        <div class="table">
+              
+               <div class="rowTable">
+               <div class="RT displayRT"><h4>Product</h4></div>
+               <div class="RT displayRT"><h4>Type</h4></div>
+               <div class="RT displayRT"><h4>Price</h4></div>
+               <div class="RT displayRT"><h4>Stock</h4></div>
+               </div>
+
+     </div>
+
+            <div class="form">
+                                  
+                <h4> Choose the option:</h4>
+                    <select id="action" name="action">
+                        <option  selected > ----Select----</opttion>
+                        <option >Add new product.</option>
+                        <option >Total value of the products.</option>
+                        <option >Total number of the products.</option>
+                        <option >Check a product .</option>
+                    </select> 
+                    <input type="submit" id="ok" value="OK"  onclick="chooseOption"/>
+                    <br/>
+<!------------------------------------------------------------------------------------------------------
+                   <div class="add">
+                            <div class="in" id="prodInput" >
+                                <input type="text" placeholder="Product..." class="input"/>
+                            </div> 
+                            <div class="in" id="typeInput">
+                                <input type="text" placeholder="Type..." class="input"  min="1" max="6"/>
+                            </div>
+                            <div class="in" id="priceInput">
+                                <input type="number" placeholder="Price..." class="input"/>
+                            </div>
+                            <div class="in" id="stocInput">
+                                <input type="number" placeholder="Stock..." class="input"/>
+                            </div>
+                             <input type="submit" value="Add" class="btnAdd"  onclick="addNewProduct()"/>  
+                        </div>
+                    
+
+                        <input type="text" class="enterSearchData" placeholder="Add product name...">
+                        <input type="submit" class="searchProduct" value="Search">
+<----------------------------------------------------------------------------------------------------------                   
+                
+                <div class="screenTable">
+                        <div class="hourSt"><p><span id="h">15</span>:<span id="m">15</span>:<span id="s">15</span></p></div>
+                        <div class="dateSt"><p><span id="d">10</span>/<span id="mm">08</span>/<span id="y">2019</span></p></div>
+                            <h4>Your Activity:</h4>
+                            <h4> - receipt: 8 ; </h4>
+                            <h4> - value received: 1000 $;</h4>
+                            <h4> - sold products: 1000 pieces;</h4>
+                        </div>
+                        
+            </div>
+        </div> 
+ -->   
+
+    </div>
+    
+    </body>
+    <script src="calc.js"></script> 
+    
+</html>
