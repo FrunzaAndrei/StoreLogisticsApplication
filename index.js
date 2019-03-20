@@ -490,6 +490,13 @@ function makeTable(){
 
       document.querySelector('.table').insertAdjacentHTML('beforeend',newHtml);
     }
+
+    // I set the orange color for the stock item is less than ten
+    for (var i=0;i<leng;i++){
+      if  (product.stoc[i]<10 ){
+        document.getElementsByClassName('rowTable1')[i].setAttribute('id','empty');
+      }
+    }
 }
 
 function updateTable(){

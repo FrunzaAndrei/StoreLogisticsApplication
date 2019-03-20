@@ -306,6 +306,10 @@ margin-top:1px;
     color :rgba(173, 173, 173, 0.932);
     text-align:center;
 }
+#empty{
+    background-color: rgb(207, 55, 0);
+}
+
 .RT{
     display: inline-block;
 }
