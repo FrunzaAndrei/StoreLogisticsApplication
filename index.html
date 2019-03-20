@@ -110,9 +110,9 @@
                </div>
 
      </div>
-
+ 
             <div class="form">
-                                  
+                                
                 <h4> Choose the option:</h4>
                     <select id="action" name="action">
                         <option  selected > ----Select----</opttion>
@@ -120,10 +120,11 @@
                         <option >Total value of the products.</option>
                         <option >Total number of the products.</option>
                         <option >Check a product .</option>
+                        <option >Adding stock to the existing product</option>
                     </select> 
                     <input type="submit" id="ok" value="OK"  onclick="chooseOption"/>
                     <br/>
-<!------------------------------------------------------------------------------------------------------
+<------------------------------------------------------------------------------------------------------
                    <div class="add">
                             <div class="in" id="prodInput" >
                                 <input type="text" placeholder="Product..." class="input"/>
@@ -143,6 +144,11 @@
 
                         <input type="text" class="enterSearchData" placeholder="Add product name...">
                         <input type="submit" class="searchProduct" value="Search">
+                  
+                        <input type="text" class="enterAddNameData" placeholder="Name"/>
+                        <input type="text" class="enterNumberAddStock" placeholder= "Number"/>
+                        <input type="submit" class="addStock" value="Add" onclick ="searchAndAddStock()" />
+
 <----------------------------------------------------------------------------------------------------------                   
                 
                 <div class="screenTable">
@@ -158,7 +164,7 @@
         </div> 
  -->   
 
-    </div>
+</div> 
     
     </body>
     <script src="index.js"></script> 

@@ -399,7 +399,6 @@ margin-top:1px;
     background-color: rgba(33, 33, 100, 0.822);
     color: gray;
 }
-
 .btnAdd:hover{
     background-color: rgb(33, 33, 100);
     color: rgb(83, 83, 83);
@@ -414,7 +413,6 @@ margin-top:1px;
     font-size:85%;
     color: black;
 }
-
 .searchProduct{
     position:absolute;
     top:12%;
@@ -425,6 +423,36 @@ margin-top:1px;
     background-color: rgba(33, 33, 100, 0.822);
     color: gray;
 }
+
+.enterAddNameData{
+    position:absolute;
+    top:12%;
+    left:5%;
+    width:25%;
+    background-color: rgba(245, 245, 245, 0.644);
+    font-size:85%;
+    color: black;
+    }
+.enterNumberAddStock{
+    position:absolute;
+    top:12%;
+    left:35%;
+    width:25%;
+    background-color: rgba(245, 245, 245, 0.644);
+    font-size:85%;
+    color: black;
+}  
+.addStock{
+    position:absolute;
+    top: 12%;
+    left: 66% ;
+    width:30px;
+    height: 25px;
+    border-radius:20%;
+    background-color: rgba(33, 33, 100, 0.822);
+    color: gray;
+}
+
 
 .screenTable{
     width: 98%;

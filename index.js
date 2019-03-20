@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////           Memory             /////////////////////////////////////////////////
 var counterAddInputFieldsForAdd=0 ,counterDisplayYourActivity = 0;
-var counterAddInputFieldsSearchProduct = 0;  
+var counterAddInputFieldsSearchProduct = 0; counterAddInputFieldForAddStock=0; 
 var indexElement;
 var counter =-1;
 var changePage = 0;
@@ -111,7 +111,8 @@ if (changePage === 0){
     html = html + '<option >Add new product.</option>';
     html = html + '<option >Total value of the products.</option>';
     html = html + '<option >Total number of the products.</option>';
-    html = html + '<option >Check a product .</option></select>';
+    html = html + '<option >Check a product .</option>';
+    html = html + '<option >Adding stock to the existing product</option></select>';
     html = html + '<input type="submit" id="ok" value="OK" onclick="chooseOption()"/><br/>';  
     html = html + '<div class="screenTable">';
     html = html + '<div class="hourSt"><p><span id="h">15</span>:<span id="m">15</span>:<span id="s">15</span></p></div>';  
@@ -529,22 +530,31 @@ function chooseOption(){
       case 0: 
       break;
       case 1:
+       deleteInputFieldForAddStock();
        deleteInputFieldsSearchProduct();
        addInputFieldsAddNewProduct();
        break;
       case 2:
+      deleteInputFieldForAddStock();
       deleteInputFieldsSearchProduct();
       deleteInputFieldsAddNewProduct();
       totalValueWhichAreNow();
       break;
       case 3:
+      deleteInputFieldForAddStock();
       deleteInputFieldsSearchProduct();
       deleteInputFieldsAddNewProduct();
       totalValueOfStock();
       break;
       case 4:
-      addInputFieldsSearchProduct();
+      deleteInputFieldForAddStock();
       deleteInputFieldsAddNewProduct();
+      addInputFieldsSearchProduct();
+      break;
+      case 5:
+      deleteInputFieldsSearchProduct();
+      deleteInputFieldsAddNewProduct();
+      addInputFieldForAddStock();
       break;
   }
 } 
@@ -565,26 +575,46 @@ function addInputFieldsAddNewProduct(){
 //Case 4-Search
 function addInputFieldsSearchProduct(){
   counterAddInputFieldsSearchProduct = 1;
-  var html ='<input type="text" class="enterSearchData" placeholder="Add product name...">';
-  html = html + '<input type="submit" class="searchProduct" value="Search" onclick="searchProduct()">';
+  var html ='<input type="text" class="enterSearchData" placeholder="Add product name..."/>';
+  html = html + '<input type="submit" class="searchProduct" value="Search" onclick="searchProduct()"/>';
   document.querySelector('.form').insertAdjacentHTML('beforeend',html);
 }
 
-//Case 1,2,3
+//Case 5-Add Stock
+function addInputFieldForAddStock(){
+  counterAddInputFieldForAddStock =1;
+  var html = '<input type="text" class="enterAddNameData" placeholder="Name"/>';
+  html = html + '<input type="number" class="enterNumberAddStock" placeholder= "Number"/>';
+  html = html + '<input type="submit" class="addStock" value="Add" onclick ="searchAndAddStock()"/>'
+  document.querySelector('.form').insertAdjacentHTML('beforeend',html);
+};
+
+//Case 1,2,3,5
 function deleteInputFieldsSearchProduct(){
   if (counterAddInputFieldsSearchProduct !== 0){
   document.querySelector('.enterSearchData').remove();
   document.querySelector('.searchProduct').remove();
+  counterAddInputFieldsSearchProduct =0;
   }
 }
 
-//Case 2,3,4
+//Case 2,3,4,5
 function deleteInputFieldsAddNewProduct(){
   if (counterAddInputFieldsForAdd !==0){
   document.querySelector('.add').remove();
   counterAddInputFieldsForAdd = 0; 
  }
 }
+
+//Case 1,2,3,4
+function deleteInputFieldForAddStock(){
+  if (counterAddInputFieldForAddStock !== 0){
+    document.querySelector('.enterAddNameData').remove();
+    document.querySelector('.enterNumberAddStock').remove();
+    document.querySelector('.addStock').remove();
+    counterAddInputFieldForAddStock=0;
+  }
+};
 
 //After btn "Add"
 function addNewProduct(){
@@ -675,6 +705,29 @@ if  (indexSearch === -1){
       displayYourActivity(message);
   }
 } 
+}
+
+//Case 5
+ function searchAndAddStock(){
+  var product_value = document.querySelector('.enterAddNameData').value;
+  var stock_value = document.querySelector('.enterNumberAddStock').value;
+  var leng = product.name.length;
+  var j=0;
+
+  if(Math.abs(product_value) !== NaN && Math.abs(stock_value) !== 0){
+       for(var i=0;i<leng;i++){
+         var lengt = product.name[i].length;
+         var elem = product.name[i].substr(0,lengt-2);
+         if (product_value == elem){
+           product.stoc[i] += parseInt(stock_value);
+         } else j++;
+       }
+       if (j == i) {
+         displayYourActivity("This item does not exist in the table!");
+        } else { 
+               displayYourActivity("Added  "+ stock_value +" "+product_value );
+               updateTable()};  
+  }
 }
 
 //Sync function - Sales <-> Storage
