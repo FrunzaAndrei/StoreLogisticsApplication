@@ -530,8 +530,9 @@ function chooseOption(){
       case 0: 
       break;
       case 1:
-       deleteInputFieldForAddStock();
        deleteInputFieldsSearchProduct();
+       deleteInputFieldForAddStock();
+       deleteInputFieldsAddNewProduct();
        addInputFieldsAddNewProduct();
        break;
       case 2:
@@ -547,12 +548,14 @@ function chooseOption(){
       totalValueOfStock();
       break;
       case 4:
+      deleteInputFieldsSearchProduct();
       deleteInputFieldForAddStock();
       deleteInputFieldsAddNewProduct();
       addInputFieldsSearchProduct();
       break;
       case 5:
       deleteInputFieldsSearchProduct();
+      deleteInputFieldForAddStock();
       deleteInputFieldsAddNewProduct();
       addInputFieldForAddStock();
       break;
@@ -595,7 +598,7 @@ function deleteInputFieldsSearchProduct(){
   document.querySelector('.enterSearchData').remove();
   document.querySelector('.searchProduct').remove();
   counterAddInputFieldsSearchProduct =0;
-  }
+   }
 }
 
 //Case 2,3,4,5
@@ -689,16 +692,18 @@ function searchProduct(){
 
 if  (indexSearch === -1){
   displayYourActivity("This product is not founded.")
-} else{
+} else{ updateTable();
   for (var i=0;i<l;i++){
        leng = product.name[i].length;
        name = product.name[i].substr(0,leng-2);
        if (name === search){
-           found++;
+        document.getElementsByClassName('rowTable1')[i].setAttribute('id','search');
+                   found++;
+
       }
   }
   if (found === 1){
-  var message = search + ' exist and has price per pieces of ' + product.price[indexSearch] +' $';
+  var message = search + ' are in the table!';
   displayYourActivity(message);
   }  else { 
       message =   "There are " + found + ' '+ search; 
