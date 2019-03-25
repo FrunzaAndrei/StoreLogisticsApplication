@@ -112,7 +112,8 @@ if (changePage === 0){
     html = html + '<option >Total value of the products.</option>';
     html = html + '<option >Total number of the products.</option>';
     html = html + '<option >Check a product .</option>';
-    html = html + '<option >Adding stock to the existing product</option></select>';
+    html = html + '<option >Adding stock to the existing product</option>';
+    html = html + '<option >Display sold products</option></select>';
     html = html + '<input type="submit" id="ok" value="OK" onclick="chooseOption()"/><br/>';  
     html = html + '<div class="screenTable">';
     html = html + '<div class="hourSt"><p><span id="h">15</span>:<span id="m">15</span>:<span id="s">15</span></p></div>';  
@@ -126,7 +127,7 @@ if (changePage === 0){
      makeTable();
      if (salesData.length > 0) {
       updateSaleDataToStorage();
-      displayYourActivity('You gave '+ (numberReceipt-1) + ' receipts.');
+      displayYourActivity('You have '+ (numberReceipt-1) + ' costumers.');
       var valueTotal = Math.round(totalCashColected*100)/100;
       displayYourActivity('You sold '+ valueTotal + ' $.');
      }
@@ -445,6 +446,7 @@ document.querySelector('header').insertAdjacentHTML('afterbegin',html);
   counter =-1;
   runBtnSecond=1; 
   btnNext =1;
+  moreOk = 0;
  
   sales();
 
@@ -558,6 +560,12 @@ function chooseOption(){
       deleteInputFieldForAddStock();
       deleteInputFieldsAddNewProduct();
       addInputFieldForAddStock();
+      break;
+      case 6:
+      deleteInputFieldsSearchProduct();
+      deleteInputFieldForAddStock();
+      deleteInputFieldsAddNewProduct();
+      displaySoldProducts();
       break;
   }
 } 
@@ -734,6 +742,30 @@ if  (indexSearch === -1){
                updateTable()};  
   }
 }
+
+//Case 6
+ function displaySoldProducts(){
+   var pieces=0;
+   var value = 0;
+   var leng,lengt;
+   displayYourActivity ("You sold :");
+   leng = historyReceipts.length;
+   for (var i=0; i<leng; i++){
+    lengt=historyReceipts[i].length;
+    displayYourActivity("+++++++++++++++++++++++++++++++");
+    displayYourActivity('Receipt number '+(i+1)+ " contains:");
+      for (var j=0; j<lengt;j++){
+        if (j !== lengt-1){
+          pieces +=historyReceipts[i][j][3];
+          displayYourActivity( historyReceipts[i][j][1]+' '+ historyReceipts[i][j][3]+' sold pieces;');
+        }else {
+          value += historyReceipts[i][j];
+        }
+      }
+   }
+   displayYourActivity("Total value : " + Math.round(value*100)/100 +" $.");
+   displayYourActivity("You sold "+ pieces + " products.");
+    }
 
 //Sync function - Sales <-> Storage
 function updateSaleDataToStorage(){
